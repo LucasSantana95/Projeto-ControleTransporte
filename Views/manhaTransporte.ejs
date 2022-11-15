@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Listagem Alunos - Manhã</title>
+	<link rel="stylesheet" href="./css/aluno.css">
+</head>
+<body>
+	<a href="./inicioTransporte"><input type="button" value="Voltar"></a>
+	<div class="divTabela">
+		<h1>Lista dos Alunos - Turno da Manhã</h1>
+		<form action="/manhatransporte" method="post">
+			<table class="tabelaAlunos">
+				<thead>
+					<tr>
+						<th>Presença</th>
+						<th>Nome</th>
+						<th>Escola</th>
+						<th>Turno</th>
+						<th>Endereço</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for(item of alunos) { %>
+						<% let idItem = item._id %>
+					<tr>
+						<td>
+							<label class="checkbox-contain">
+								<input type="checkbox" name="presentes" value="<%= item._id%>" id="_checkbox" checked>
+								<div class="checkbox-input"></div>
+							</label>				
+						</td>
+						<td><%= item.nome %></td>
+						<td><%= item.escola %></td>
+						<td><%= item.turno %></td>
+						<td><%= item.endereco %></td>
+					</tr>
+					<% } %>
+				</tbody>	
+			</table>
+			<button type="submit" >Definir Rotas</button>
+		</form>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+body{
+  background-color: dimgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formulario{
+  background-color: rgb(65, 64, 64);
+  display: flex;
+  color: white;
+  width: 60%;
+  height: 60%;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+}

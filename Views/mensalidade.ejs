@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Listagem Mensalidades</title>
+	<link rel="stylesheet" href="./css/mensalidade.css">
+</head>
+<body id="body">
+	<a href="./"><input type="button" value="Voltar"></a>
+	<div class="divTabela">
+		<h1>Mensalidades dos Alunos</h1>
+        <form action="/mensalidade" method="post"></form>
+		<table class="tabelaAlunos">
+			<thead>
+				<tr>
+                    <th>Pago</th>
+					<th>Nome</th>
+					<th>Escola</th>
+					<th>Turno</th>
+					<th>Valor</th>
+                    <th>Data</th>
+                    <th>Comentário</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for(item of Dados) { %>
+					<% let idItem = item.id %>
+				<tr>
+                    <td>
+                        <a href="/modalMensalidade/<%=idItem%>" class="<%= item.pago.class%>>">
+                            <img src="<%= item.pago.img%>">
+                        </a>				
+                    </td>
+					<td><%= item.nome %></td>
+					<td><%= item.escola %></td>
+					<td><%= item.turno %></td>
+					<td>R$<%= item.valor %></td>
+                    <td><%= item.data %></td>
+                    <td><%= item.comentario %></td>
+				</tr>
+				<% } %>
+			</tbody>	
+		</table>
+	</div>
+</body>
+</html>

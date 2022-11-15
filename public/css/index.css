@@ -1,0 +1,47 @@
+body{
+    background:#353a40; 
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+input {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:20px;
+	border:1px solid #473d47;
+	display:inline-block;
+	cursor:pointer;
+	color:#333536;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+input:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+input:active {
+	position:relative;
+	top:1px;
+}
+.btnMensalidade{
+	width: 600px;
+    height: 50px;
+}
+.btnCadastro{
+    width: 300px;
+    height: 50px;
+}
+.btnRota{
+    width: 600px;
+    height: 50px;
+}
+h1{
+    color: white;
+}

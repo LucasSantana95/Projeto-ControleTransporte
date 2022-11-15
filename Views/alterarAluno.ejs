@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Alterar Aluno</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <a href="./aluno"><input type="button" value="Voltar"></a>
+        <form method="post">
+            <h1>Alterar Aluno</h1>
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" readonly value="<%= Aluno._id %>">
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="<%= Aluno.nome %>">
+
+            <label for="escola">escola:</label>
+            <select id="escola" name="escola">
+                <% let escolas = ["Camargo","CEDUC","Pinheiros","Sandra Borges","Tia Bia","Seixas Japones","CIEP 360","Alfredo","Carrielo"]%>
+                    <% for( item of escolas) { %>
+                        <option><%= item%></option>
+                    <% } %>
+
+            </select>
+
+            <label for="turno">turno:</label>
+            <select id="turno" name="turno">
+                <% let Turnos = ["Manhã","Tarde"]%>
+                <% for( item of Turnos) { %>
+                    <option><%=item%></option>
+                <% } %>
+            </select>
+			
+            <label for="endereco">endereco:</label>
+            <input type="text" id="endereco" name="endereco" value="<%= Aluno.endereco %>">
+			
+            <label for="valor">valor:</label>
+            <input type="text" id="valor" name="valor" value="<%= Aluno.valor %>">
+
+            <input type="submit" id="btnAlterar" name="Alterar" value="Alterar">
+        </form> 
+    </body>
+</html>
+

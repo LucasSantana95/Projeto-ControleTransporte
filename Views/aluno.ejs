@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Listagem Alunos</title>
+	<link rel="stylesheet" href="./css/aluno.css">
+</head>
+<body>
+	<a href="./"><input type="button" value="Voltar"></a>
+	<div class="divTabela">
+		<h1>Lista dos Alunos</h1>
+		<table class="tabelaAlunos">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Escola</th>
+					<th>Turno</th>
+					<th>Endereço</th>
+					<th>Valor</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for(item of alunos) { %>
+					<% let idItem = item._id %>
+				<tr>
+					<td><%= item.nome %></td>
+					<td><%= item.escola %></td>
+					<td><%= item.turno %></td>
+					<td><%= item.endereco %></td>
+					<td>R$<%= item.valor %></td>
+					<td><a href="/alteraraluno/<%= item._id%>"><img src="../iconeLapis.jpg" height="20px" width="20px"></a></td>
+                	<td><a href="/deletaraluno/<%= item._id%>"><img src="../iconeLixeira.jpg" height="20px" width="20px"></a></td>
+				</tr>
+				<% } %>
+			<tfoot>
+				<% let total = 0; let totalAlunos = 0 %>
+				<% for(item of alunos) { total = total + item.valor; totalAlunos = totalAlunos +1} %>
+				<td>Total: R$<%= total%></td>
+				<td>Total Alunos: <%= totalAlunos%></td>
+			</tfoot>
+			</tbody>	
+		</table>
+		<a href="addaluno"><input type="button" value="Adicionar" class="btnAdicionar"></a>
+	</div>
+</body>
+</html>

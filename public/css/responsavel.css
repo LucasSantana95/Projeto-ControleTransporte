@@ -1,0 +1,95 @@
+
+@import url(https://fonts.googleapis.com/css?family=Patua+One|Open+Sans);
+body {
+  background:#353a40;
+}
+.divTabela{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+table {
+  border-collapse: separate;
+  background:#fff;
+  border-radius:5px;
+  margin:50px auto;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+thead {
+  border-radius:5px;
+}
+
+thead th {
+  font-family: 'Patua One', cursive;
+  font-size:16px;
+  font-weight:400;
+  color:#fff;
+  text-shadow:1px 1px 0px rgba(0,0,0,0.5);
+  text-align:left;
+  padding:20px;
+  background-image:linear-gradient(#646f7f, #4a5564);
+  border-top:1px solid #858d99;
+}
+tbody tr td {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:400;
+  color:#5f6062;
+  font-size:13px;
+  padding:20px 20px 20px 20px;
+  border-bottom:1px solid #e0e0e0;
+  
+}
+
+tbody tr:nth-child(2n) {
+  background:#f0f3f5;
+}
+
+tbody tr:last-child td {
+  border-bottom:none;
+}
+
+tbody:hover > tr td {
+  opacity:0.5;
+  
+  /* uncomment for blur effect */
+  color:transparent;
+  text-shadow:0px 0px 2px rgba(0,0,0,0.8);
+}
+
+tbody:hover > tr:hover td {
+  text-shadow:none;
+  color:#2d2d2d;
+  opacity:1.0;
+}
+tfoot {
+    text-align: right;
+    font-size:20px;
+}
+.btnAdicionar {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:20px;
+	border:1px solid #473d47;
+	display:inline-block;
+	cursor:pointer;
+	color:#333536;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+.btnAdicionar:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.btnAdicionar:active {
+	position:relative;
+	top:1px;
+}
+h1{
+    color: white;
+}
