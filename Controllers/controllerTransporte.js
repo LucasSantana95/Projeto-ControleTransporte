@@ -43,11 +43,31 @@ module.exports = {
         })
     },
     postTarde : (req,res) => {
-        for (let i = 0; i < req.body.presentes.length; i++) {
-            Alunos.findById(req.body.presentes[i]).then((aluno) =>{
-                console.log(`Nome: ${aluno.nome} e Endereço: ${aluno.endereco}`);
-            })       
-        }
+        let alunosPresentes = [];
+        let promise = new Promise( async (resolve, reject)=> {
+            ordenarHorariosColegios();
+            for (const i of req.body.presentes) {
+                await Alunos.findById(i).then((item) =>{
+                    let aluno = {
+                        nome : item.nome,
+                        escola : item.escola,
+                        endereco : item.endereco
+                    }
+                    alunosPresentes.push(aluno);
+                })   
+            }
+            if (alunosPresentes.length > 0) {
+                resolve(alunosPresentes)
+            } else {
+                reject("erro");
+            }
+        })
+        promise.then( async (alunosPresentes)=>{
+            let alunosPresentesOrdenados = await definirOrdemAlunos(alunosPresentes);
+            res.render('rotasTarde.ejs',{alunosPresentesOrdenados});
+        }).catch((erro) =>{ 
+            console.log(erro)
+        })
     }
 }
 
